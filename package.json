@@ -1,0 +1,24 @@
+{
+  "name": "makerkit-emails-starter",
+  "version": "0.0.19",
+  "private": true,
+  "scripts": {
+    "build": "email build",
+    "dev": "email dev",
+    "export": "email export",
+    "export:pretty": "email export --pretty"
+  },
+  "dependencies": {
+    "@types/dotenv": "8.2.0",
+    "@react-email/components": "0.0.18",
+    "react-email": "2.1.4",
+    "react": "^18.2.0",
+    "zod": "^3.23.8",
+    "dotenv": "^16.4.5"
+  },
+  "devDependencies": {
+    "@types/react": "18.2.33",
+    "@types/react-dom": "18.2.14",
+    "prettier": "^3.3.2"
+  }
+}
