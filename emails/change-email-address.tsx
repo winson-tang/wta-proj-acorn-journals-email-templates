@@ -1,10 +1,6 @@
 import {
   Body,
-  Button,
-  Container,
   Head,
-  Heading,
-  Hr,
   Html,
   Link,
   Preview,
@@ -13,7 +9,15 @@ import {
   Tailwind,
 } from '@react-email/components';
 import * as React from 'react';
+
 import { configuration } from '../config';
+import { EmailWrapper } from './components/wrapper';
+import { CtaButton } from './components/cta-button';
+import { EmailFooter } from './components/footer';
+import { EmailHeading } from './components/heading';
+import { BodyStyle } from './components/body-style';
+import {EmailContent} from "./components/content";
+import {EmailHeader} from "./components/header";
 
 export const ChangeEmailAddress = () => {
   const productName = configuration.productName;
@@ -21,45 +25,45 @@ export const ChangeEmailAddress = () => {
 
   return (
     <Html>
-      <Head />
+      <Head>
+        <BodyStyle />
+      </Head>
+
       <Preview>{previewText}</Preview>
+
       <Tailwind>
-        <Body className="bg-[#fff] my-auto mx-auto font-sans text-[#484848]">
-          <Container className="border border-solid border-[#eaeaea] rounded-md my-[40px] mx-auto p-[36px] max-w-[465px]">
-            <Heading className="text-black font-sans tracking-tight text-[24px] font-normal p-0 mx-0">
-              Confirm Change of Email
-            </Heading>
+        <Body>
+          <EmailWrapper>
+            <EmailHeader>
+              <EmailHeading>Confirm Change of Email</EmailHeading>
+            </EmailHeader>
 
-            <Text className="text-black text-[14px] leading-[24px]">
-              Follow this link to confirm the update of your email from{' '}
-              {`{{ .Email }}`} to {`{{ .NewEmail }}`}
-            </Text>
+            <EmailContent>
+              <Text className="text-black text-[14px] leading-[24px]">
+                Follow this link to confirm the update of your email from{' '}
+                {`{{ .Email }}`} to {`{{ .NewEmail }}`}
+              </Text>
 
-            <Section className="text-center mt-[32px] mb-[32px]">
-              <Button
-                className="w-full bg-[#000000] rounded text-white text-[14px] font-semibold no-underline text-center py-3"
-                href={`{{ .ConfirmationURL }}`}
-              >
-                Confirm Email Change
-              </Button>
-            </Section>
+              <Section className="text-center mt-[32px] mb-[32px]">
+                <CtaButton href={`{{ .ConfirmationURL }}`}>
+                  Confirm Email Change
+                </CtaButton>
+              </Section>
 
-            <Text className="text-black text-[14px] leading-[24px]">
-              or copy and paste this URL into your browser:{' '}
-              <Link
-                href={`{{ .ConfirmationURL }}`}
-                className="text-blue-600 no-underline"
-              >
-                {`{{ .ConfirmationURL }}`}
-              </Link>
-            </Text>
+              <Text className="text-black text-[14px] leading-[24px]">
+                or copy and paste this URL into your browser:{' '}
+                <Link
+                    href={`{{ .ConfirmationURL }}`}
+                    className="text-blue-600 no-underline"
+                >
+                  {`{{ .ConfirmationURL }}`}
+                </Link>
+              </Text>
 
-            <Hr className="border border-[#efefef] my-[12px] mx-0 w-full" />
+            </EmailContent>
 
-            <Text className="text-[12px] leading-[24px] text-gray-300">
-              {productName}
-            </Text>
-          </Container>
+            <EmailFooter>{productName}</EmailFooter>
+          </EmailWrapper>
         </Body>
       </Tailwind>
     </Html>

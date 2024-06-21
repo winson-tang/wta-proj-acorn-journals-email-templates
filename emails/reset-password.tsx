@@ -1,9 +1,6 @@
 import {
   Body,
-  Button,
-  Container,
   Head,
-  Heading,
   Hr,
   Html,
   Link,
@@ -14,6 +11,13 @@ import {
 } from '@react-email/components';
 import * as React from 'react';
 import { configuration } from '../config';
+import { BodyStyle } from './components/body-style';
+import { EmailWrapper } from './components/wrapper';
+import { EmailHeading } from './components/heading';
+import { CtaButton } from './components/cta-button';
+import { EmailFooter } from './components/footer';
+import { EmailHeader } from './components/header';
+import { EmailContent } from './components/content';
 
 export const ResetPassword = () => {
   const productName = configuration.productName;
@@ -21,44 +25,43 @@ export const ResetPassword = () => {
 
   return (
     <Html>
-      <Head />
+      <Head>
+        <BodyStyle />
+      </Head>
+
       <Preview>{previewText}</Preview>
+
       <Tailwind>
-        <Body className="bg-[#fff] my-auto mx-auto font-sans text-[#484848]">
-          <Container className="border border-solid border-[#eaeaea] rounded-md my-[40px] mx-auto p-[36px] max-w-[465px]">
-            <Heading className="text-black font-sans tracking-tight text-[24px] font-normal p-0 mx-0">
-              Reset your {productName} password
-            </Heading>
+        <Body>
+          <EmailWrapper>
+            <EmailHeader>
+              <EmailHeading>Reset your {productName} password</EmailHeading>
+            </EmailHeader>
 
-            <Text className="text-black text-[14px] leading-[24px]">
-              Please click the button below to reset your password.
-            </Text>
+            <EmailContent>
+              <Text className="text-black text-[14px] leading-[24px]">
+                Please click the button below to reset your password.
+              </Text>
 
-            <Section className="text-center mt-[32px] mb-[32px]">
-              <Button
-                className="w-full bg-[#000000] rounded text-white text-[14px] font-semibold no-underline text-center py-3"
-                href={`{{ .ConfirmationURL }}`}
-              >
-                Reset Password
-              </Button>
-            </Section>
+              <Section className="text-center mt-[32px] mb-[32px]">
+                <CtaButton href={`{{ .ConfirmationURL }}`}>
+                  Reset Password
+                </CtaButton>
+              </Section>
 
-            <Text className="text-black text-[14px] leading-[24px]">
-              or copy and paste this URL into your browser:{' '}
-              <Link
-                href={`{{ .ConfirmationURL }}`}
-                className="text-blue-600 no-underline"
-              >
-                {`{{ .ConfirmationURL }}`}
-              </Link>
-            </Text>
+              <Text className="text-black text-[14px] leading-[24px]">
+                or copy and paste this URL into your browser:{' '}
+                <Link
+                  href={`{{ .ConfirmationURL }}`}
+                  className="text-blue-600 no-underline"
+                >
+                  {`{{ .ConfirmationURL }}`}
+                </Link>
+              </Text>
+            </EmailContent>
 
-            <Hr className="border border-[#efefef] my-[12px] mx-0 w-full" />
-
-            <Text className="text-[12px] leading-[24px] text-gray-300">
-              {productName}
-            </Text>
-          </Container>
+            <EmailFooter>{productName}</EmailFooter>
+          </EmailWrapper>
         </Body>
       </Tailwind>
     </Html>
