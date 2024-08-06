@@ -16,8 +16,8 @@ import { CtaButton } from './components/cta-button';
 import { EmailFooter } from './components/footer';
 import { EmailHeading } from './components/heading';
 import { BodyStyle } from './components/body-style';
-import {EmailContent} from "./components/content";
-import {EmailHeader} from "./components/header";
+import { EmailContent } from './components/content';
+import { EmailHeader } from './components/header';
 
 export const ChangeEmailAddress = () => {
   const productName = configuration.productName;
@@ -53,13 +53,12 @@ export const ChangeEmailAddress = () => {
               <Text className="text-black text-[14px] leading-[24px]">
                 or copy and paste this URL into your browser:{' '}
                 <Link
-                    href={`{{ .ConfirmationURL }}`}
-                    className="text-blue-600 no-underline"
+                  href={`{{ .ConfirmationURL }}`}
+                  className="text-blue-600 no-underline"
                 >
                   {`{{ .ConfirmationURL }}`}
                 </Link>
               </Text>
-
             </EmailContent>
 
             <EmailFooter>{productName}</EmailFooter>

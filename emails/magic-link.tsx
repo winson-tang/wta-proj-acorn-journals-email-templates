@@ -1,7 +1,6 @@
 import {
   Body,
   Head,
-  Hr,
   Html,
   Link,
   Preview,
@@ -22,7 +21,7 @@ import { EmailContent } from './components/content';
 
 export const MagicLink = () => {
   const productName = configuration.productName;
-  const inviteLink = `{{ .SiteURL }}/auth/confirm?token_hash={{ .TokenHash }}&type=invite&callback={{ .RedirectTo }}`;
+  const inviteLink = `{{ .SiteURL }}/auth/confirm?token_hash={{ .TokenHash }}&type=magiclink&callback={{ .RedirectTo }}`;
   const previewText = `Your sign in link to ${productName}`;
 
   return (

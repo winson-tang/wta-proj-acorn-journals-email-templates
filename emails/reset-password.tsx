@@ -1,7 +1,6 @@
 import {
   Body,
   Head,
-  Hr,
   Html,
   Link,
   Preview,
@@ -22,6 +21,7 @@ import { EmailContent } from './components/content';
 export const ResetPassword = () => {
   const productName = configuration.productName;
   const previewText = `Reset your password | ${productName}`;
+  const href = `{{ .SiteURL }}/auth/confirm?token_hash={{ .TokenHash }}&type=recovery&next={{ .RedirectTo }}`;
 
   return (
     <Html>
@@ -44,7 +44,7 @@ export const ResetPassword = () => {
               </Text>
 
               <Section className="text-center mt-[32px] mb-[32px]">
-                <CtaButton href={`{{ .ConfirmationURL }}`}>
+                <CtaButton href={href}>
                   Reset Password
                 </CtaButton>
               </Section>

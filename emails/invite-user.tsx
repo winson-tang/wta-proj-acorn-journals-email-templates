@@ -1,7 +1,6 @@
 import {
   Body,
   Head,
-  Hr,
   Html,
   Link,
   Preview,

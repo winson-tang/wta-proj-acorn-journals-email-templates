@@ -1,7 +1,6 @@
 import {
   Body,
   Head,
-  Hr,
   Html,
   Link,
   Preview,
@@ -16,12 +15,12 @@ import { EmailWrapper } from './components/wrapper';
 import { EmailHeading } from './components/heading';
 import { CtaButton } from './components/cta-button';
 import { EmailFooter } from './components/footer';
-import {EmailHeader} from "./components/header";
-import {EmailContent} from "./components/content";
+import { EmailHeader } from './components/header';
+import { EmailContent } from './components/content';
 
 export const ConfirmEmail = () => {
   const productName = configuration.productName;
-  const inviteLink = `{{ .SiteURL }}/auth/confirm?token_hash={{ .TokenHash }}&type=invite&callback={{ .RedirectTo }}`;
+  const inviteLink = `{{ .SiteURL }}/auth/confirm?token_hash={{ .TokenHash }}&type=email&callback={{ .RedirectTo }}`;
   const previewText = `Confirm your email - ${productName}`;
 
   return (
