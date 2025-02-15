@@ -41,7 +41,7 @@ export const MagicLink = () => {
               </EmailHeader>
 
               <Text className="text-[#242424] text-[16px] leading-[20px]">
-                Follow this link to login
+                Hi, welcome to {productName}! Click the button below to login.
               </Text>
 
               <Section className="text-center mt-[32px] mb-[32px]">
