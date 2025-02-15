@@ -34,12 +34,12 @@ export const ChangeEmailAddress = () => {
       <Tailwind>
         <Body>
           <EmailWrapper>
-            <EmailHeader>
-              <EmailHeading>Confirm Change of Email</EmailHeading>
-            </EmailHeader>
-
             <EmailContent>
-              <Text className="text-black text-[14px] leading-[24px]">
+              <EmailHeader>
+                <EmailHeading>Confirm Change of Email</EmailHeading>
+              </EmailHeader>
+
+              <Text className="text-[#242424] text-[16px] leading-[20px]">
                 Follow this link to confirm the update of your email from{' '}
                 {`{{ .Email }}`} to {`{{ .NewEmail }}`}
               </Text>
@@ -50,7 +50,7 @@ export const ChangeEmailAddress = () => {
                 </CtaButton>
               </Section>
 
-              <Text className="text-black text-[14px] leading-[24px]">
+              <Text className="text-[#242424] text-[16px] leading-[20px]">
                 or copy and paste this URL into your browser:{' '}
                 <Link
                   href={`{{ .ConfirmationURL }}`}

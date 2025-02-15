@@ -9,19 +9,20 @@ export function EmailWrapper(
   return (
     <Container
       style={{
-        backgroundColor: '#fff',
+        backgroundColor: '#fafafa',
         margin: 'auto',
         fontFamily: 'sans-serif',
-        color: '#484848',
+        color: '#242424',
+        width: '100%',
       }}
     >
       <Container
         style={{
-          maxWidth: '535px',
-          backgroundColor: '#fff',
+          maxWidth: '720px',
+          backgroundColor: '#fafafa',
           margin: 'auto',
         }}
-        className={'my-[36px] mx-auto px-4 ' + props.className || ''}
+        className={'mx-auto px-[20px] py-[40px] ' + props.className || ''}
       >
         {props.children}
       </Container>

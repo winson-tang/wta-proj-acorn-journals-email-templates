@@ -5,10 +5,10 @@ export function BodyStyle() {
     <style>
       {`
         body {
-          background-color: #fff;
+          background-color: #fafafa;
           margin: auto;
           font-family: sans-serif;
-          color: #484848;
+          color: #242424;
         }
     `}
     </style>

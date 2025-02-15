@@ -35,12 +35,12 @@ export const MagicLink = () => {
       <Tailwind>
         <Body>
           <EmailWrapper>
-            <EmailHeader>
-              <EmailHeading>Login to {productName}</EmailHeading>
-            </EmailHeader>
-
             <EmailContent>
-              <Text className="text-black text-[14px] leading-[24px]">
+              <EmailHeader>
+                <EmailHeading>Login to {productName}</EmailHeading>
+              </EmailHeader>
+
+              <Text className="text-[#242424] text-[16px] leading-[20px]">
                 Follow this link to login
               </Text>
 
@@ -48,7 +48,7 @@ export const MagicLink = () => {
                 <CtaButton href={inviteLink}>Login to {productName}</CtaButton>
               </Section>
 
-              <Text className="text-black text-[14px] leading-[24px]">
+              <Text className="text-[#242424] text-[16px] leading-[20px]">
                 or copy and paste this URL into your browser:{' '}
                 <Link href={inviteLink} className="text-blue-600 no-underline">
                   {inviteLink}

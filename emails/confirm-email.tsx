@@ -34,12 +34,12 @@ export const ConfirmEmail = () => {
       <Tailwind>
         <Body>
           <EmailWrapper>
-            <EmailHeader>
-              <EmailHeading>Confirm your email to get started</EmailHeading>
-            </EmailHeader>
-
             <EmailContent>
-              <Text className="text-black text-[14px] leading-[24px]">
+              <EmailHeader>
+                <EmailHeading>Confirm your email to get started</EmailHeading>
+              </EmailHeader>
+
+              <Text className="text-[#242424] text-[16px] leading-[20px]">
                 You're almost there! To complete your registration, please click
                 the button below.
               </Text>
@@ -48,7 +48,7 @@ export const ConfirmEmail = () => {
                 <CtaButton href={inviteLink}>Login to {productName}</CtaButton>
               </Section>
 
-              <Text className="text-black text-[14px] leading-[24px]">
+              <Text className="text-[#242424] text-[16px] leading-[20px]">
                 or copy and paste this URL into your browser:{' '}
                 <Link href={inviteLink} className="text-blue-600 no-underline">
                   {inviteLink}

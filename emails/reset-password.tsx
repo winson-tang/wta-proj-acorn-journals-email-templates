@@ -34,12 +34,12 @@ export const ResetPassword = () => {
       <Tailwind>
         <Body>
           <EmailWrapper>
-            <EmailHeader>
-              <EmailHeading>Reset your {productName} password</EmailHeading>
-            </EmailHeader>
-
             <EmailContent>
-              <Text className="text-black text-[14px] leading-[24px]">
+              <EmailHeader>
+                <EmailHeading>Reset your {productName} password</EmailHeading>
+              </EmailHeader>
+
+              <Text className="text-[#242424] text-[16px] leading-[20px]">
                 Please click the button below to reset your password.
               </Text>
 
@@ -49,7 +49,7 @@ export const ResetPassword = () => {
                 </CtaButton>
               </Section>
 
-              <Text className="text-black text-[14px] leading-[24px]">
+              <Text className="text-[#242424] text-[16px] leading-[20px]">
                 or copy and paste this URL into your browser:{' '}
                 <Link
                   href={`{{ .ConfirmationURL }}`}

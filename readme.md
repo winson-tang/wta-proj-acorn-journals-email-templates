@@ -22,6 +22,14 @@ Open [localhost:3000](http://localhost:3000) with your browser to see the result
 
 Please complete the `.env` file with your own values.
 
+```bash
+PRODUCT_NAME=Makerkit
+DISPLAY_LOGO=false
+```
+
+1. PRODUCT_NAME: The name of your product
+2. DISPLAY_LOGO: Whether to display the logo in the email.
+
 ### Building the emails
 
 Please run the following command to build the emails:

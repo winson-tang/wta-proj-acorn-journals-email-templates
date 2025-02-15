@@ -34,12 +34,12 @@ export const InviteUser = () => {
       <Tailwind>
         <Body>
           <EmailWrapper>
-            <EmailHeader>
-              <EmailHeading>You have been invited to {productName}</EmailHeading>
-            </EmailHeader>
-
             <EmailContent>
-              <Text className="text-black text-[14px] leading-[24px]">
+              <EmailHeader>
+                <EmailHeading>You have been invited to {productName}</EmailHeading>
+              </EmailHeader>
+
+              <Text className="text-[#242424] text-[16px] leading-[20px]">
                 You have been invited to create a user on {productName}. Follow
                 this link to accept the invite:
               </Text>
@@ -50,7 +50,7 @@ export const InviteUser = () => {
                 </CtaButton>
               </Section>
 
-              <Text className="text-black text-[14px] leading-[24px]">
+              <Text className="text-[#242424] text-[16px] leading-[20px]">
                 or copy and paste this URL into your browser:{' '}
                 <Link href={inviteLink} className="text-blue-600 no-underline">
                   {inviteLink}
