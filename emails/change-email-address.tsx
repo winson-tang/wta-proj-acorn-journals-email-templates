@@ -34,11 +34,11 @@ export const ChangeEmailAddress = () => {
       <Tailwind>
         <Body>
           <EmailWrapper>
-            <EmailContent>
-              <EmailHeader>
-                <EmailHeading>Confirm Change of Email</EmailHeading>
-              </EmailHeader>
+            <EmailHeader>
+              <EmailHeading>Confirm Change of Email</EmailHeading>
+            </EmailHeader>
 
+            <EmailContent>
               <Text className="text-[#242424] text-[16px] leading-[20px]">
                 Follow this link to confirm the update of your email from{' '}
                 {`{{ .Email }}`} to {`{{ .NewEmail }}`}

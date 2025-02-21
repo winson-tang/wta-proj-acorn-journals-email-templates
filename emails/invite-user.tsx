@@ -34,11 +34,11 @@ export const InviteUser = () => {
       <Tailwind>
         <Body>
           <EmailWrapper>
-            <EmailContent>
-              <EmailHeader>
-                <EmailHeading>You have been invited to {productName}</EmailHeading>
-              </EmailHeader>
+            <EmailHeader>
+              <EmailHeading>You have been invited to {productName}</EmailHeading>
+            </EmailHeader>
 
+            <EmailContent>
               <Text className="text-[#242424] text-[16px] leading-[20px]">
                 You have been invited to create a user on {productName}. Follow
                 this link to accept the invite:

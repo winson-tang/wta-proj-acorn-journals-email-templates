@@ -21,7 +21,7 @@ import { EmailContent } from './components/content';
 export const ResetPassword = () => {
   const productName = configuration.productName;
   const previewText = `Reset your password | ${productName}`;
-  const href = `{{ .SiteURL }}/auth/confirm?token_hash={{ .TokenHash }}&type=recovery&next={{ .RedirectTo }}`;
+  const href = `{{ .SiteURL }}/auth/confirm?token_hash={{ .TokenHash }}&type=recovery&next=/update-password`;
 
   return (
     <Html>
@@ -34,11 +34,11 @@ export const ResetPassword = () => {
       <Tailwind>
         <Body>
           <EmailWrapper>
-            <EmailContent>
-              <EmailHeader>
-                <EmailHeading>Reset your {productName} password</EmailHeading>
-              </EmailHeader>
+            <EmailHeader>
+              <EmailHeading>Reset your {productName} password</EmailHeading>
+            </EmailHeader>
 
+            <EmailContent>
               <Text className="text-[#242424] text-[16px] leading-[20px]">
                 Please click the button below to reset your password.
               </Text>

@@ -35,11 +35,11 @@ export const MagicLink = () => {
       <Tailwind>
         <Body>
           <EmailWrapper>
+            <EmailHeader>
+              <EmailHeading>Login to {productName}</EmailHeading>
+            </EmailHeader>
+            
             <EmailContent>
-              <EmailHeader>
-                <EmailHeading>Login to {productName}</EmailHeading>
-              </EmailHeader>
-
               <Text className="text-[#242424] text-[16px] leading-[20px]">
                 Hi, welcome to {productName}! Click the button below to login.
               </Text>

@@ -34,11 +34,11 @@ export const ConfirmEmail = () => {
       <Tailwind>
         <Body>
           <EmailWrapper>
-            <EmailContent>
-              <EmailHeader>
-                <EmailHeading>Confirm your email to get started</EmailHeading>
-              </EmailHeader>
+            <EmailHeader>
+              <EmailHeading>Confirm your email to get started</EmailHeading>
+            </EmailHeader>
 
+            <EmailContent>
               <Text className="text-[#242424] text-[16px] leading-[20px]">
                 You're almost there! To complete your registration, please click
                 the button below.
