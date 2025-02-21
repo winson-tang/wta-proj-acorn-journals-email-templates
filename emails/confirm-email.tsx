@@ -20,7 +20,7 @@ import { EmailContent } from './components/content';
 
 export const ConfirmEmail = () => {
   const productName = configuration.productName;
-  const inviteLink = `{{ .SiteURL }}/auth/confirm?token_hash={{ .TokenHash }}&type=email&callback={{ .RedirectTo }}`;
+  const confirmLink = `{{ .SiteURL }}/auth/confirm?token_hash={{ .TokenHash }}&type=email&callback={{ .RedirectTo }}`;
   const previewText = `Confirm your email - ${productName}`;
 
   return (
@@ -45,13 +45,13 @@ export const ConfirmEmail = () => {
               </Text>
 
               <Section className="text-center mt-[32px] mb-[32px]">
-                <CtaButton href={inviteLink}>Login to {productName}</CtaButton>
+                <CtaButton href={confirmLink}>Login to {productName}</CtaButton>
               </Section>
 
               <Text className="text-[#242424] text-[16px] leading-[20px]">
                 or copy and paste this URL into your browser:{' '}
-                <Link href={inviteLink} className="text-blue-600 no-underline">
-                  {inviteLink}
+                <Link href={confirmLink} className="text-blue-600 no-underline">
+                  {confirmLink}
                 </Link>
               </Text>
             </EmailContent>

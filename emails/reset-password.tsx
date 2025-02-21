@@ -21,7 +21,7 @@ import { EmailContent } from './components/content';
 export const ResetPassword = () => {
   const productName = configuration.productName;
   const previewText = `Reset your password | ${productName}`;
-  const href = `{{ .SiteURL }}/auth/confirm?token_hash={{ .TokenHash }}&type=recovery&next=/update-password`;
+  const href = `{{ .SiteURL }}/auth/confirm?token_hash={{ .TokenHash }}&type=recovery&next={{ .SiteURL }}/update-password`;
 
   return (
     <Html>
@@ -52,10 +52,10 @@ export const ResetPassword = () => {
               <Text className="text-[#242424] text-[16px] leading-[20px]">
                 or copy and paste this URL into your browser:{' '}
                 <Link
-                  href={`{{ .ConfirmationURL }}`}
+                  href={href}
                   className="text-blue-600 no-underline"
                 >
-                  {`{{ .ConfirmationURL }}`}
+                  {href}
                 </Link>
               </Text>
             </EmailContent>
