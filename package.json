@@ -1,6 +1,6 @@
 {
   "name": "makerkit-emails-starter",
-  "version": "0.0.20",
+  "version": "0.0.21",
   "private": true,
   "scripts": {
     "build": "email build",
@@ -10,8 +10,8 @@
   },
   "dependencies": {
     "@types/dotenv": "8.2.0",
-    "@react-email/components": "0.0.33",
-    "react-email": "3.0.7",
+    "@react-email/components": "0.0.42",
+    "react-email": "4.0.16",
     "react": "^19.0.0",
     "zod": "^3.24.2",
     "dotenv": "^16.4.5"
