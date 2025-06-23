@@ -2,7 +2,6 @@ import {
   Body,
   Head,
   Html,
-  Link,
   Preview,
   Section,
   Text,
@@ -11,29 +10,30 @@ import {
 import * as React from 'react';
 
 import { configuration } from '../config';
-import { BodyStyle } from './components/body-style';
 import { EmailWrapper } from './components/wrapper';
 import { EmailHeading } from './components/heading';
-import { CtaButton } from './components/cta-button';
 import { EmailFooter } from './components/footer';
 import { EmailHeader } from './components/header';
 import { EmailContent } from './components/content';
+import { getBodyStyle } from './lib/get-body-style';
+import { Meta } from './components/meta';
 
 export const Otp = () => {
   const productName = configuration.productName;
   const previewText = `Your sign in link to ${productName}`;
   const tokenText = `{{ .Token }}`;
+  const style = getBodyStyle();
 
   return (
     <Html>
       <Head>
-        <BodyStyle />
+        <Meta />
       </Head>
 
       <Preview>{previewText}</Preview>
 
       <Tailwind>
-        <Body>
+        <Body style={style}>
           <EmailWrapper>
             <EmailHeader>
               <EmailHeading>Login to {productName}</EmailHeading>
@@ -45,12 +45,12 @@ export const Otp = () => {
               </Text>
 
               <Section className="text-center mt-[32px] mb-[32px] bg-[#F3F4F6] px-1 py-4">
-                <Text className={'font-medium text-[30px]'}>
-                  {tokenText}
-                </Text>
+                <Text className={'font-medium text-[30px]'}>{tokenText}</Text>
               </Section>
 
-              <Text className={'text-[#242424] text-[12px] leading-[20px] mt-2'}>
+              <Text
+                className={'text-[#242424] text-[12px] leading-[20px] mt-2'}
+              >
                 If you did not request this code, please ignore this email.
               </Text>
             </EmailContent>

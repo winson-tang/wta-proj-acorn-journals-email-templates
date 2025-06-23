@@ -1,12 +1,13 @@
 {
   "name": "makerkit-emails-starter",
-  "version": "0.0.21",
+  "version": "0.0.22",
   "private": true,
   "scripts": {
     "build": "email build",
     "dev": "email dev",
     "export": "email export",
-    "export:pretty": "email export --pretty"
+    "export:pretty": "email export --pretty",
+    "format:fix": "prettier ./emails --write"
   },
   "dependencies": {
     "@types/dotenv": "8.2.0",

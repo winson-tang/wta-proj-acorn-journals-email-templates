@@ -2,7 +2,6 @@ import {
   Body,
   Head,
   Html,
-  Link,
   Preview,
   Section,
   Text,
@@ -10,32 +9,36 @@ import {
 } from '@react-email/components';
 import * as React from 'react';
 import { configuration } from '../config';
-import { BodyStyle } from './components/body-style';
 import { EmailWrapper } from './components/wrapper';
 import { EmailHeading } from './components/heading';
 import { CtaButton } from './components/cta-button';
 import { EmailFooter } from './components/footer';
-import {EmailHeader} from "./components/header";
-import {EmailContent} from "./components/content";
+import { EmailHeader } from './components/header';
+import { EmailContent } from './components/content';
+import { Meta } from './components/meta';
+import { getBodyStyle } from './lib/get-body-style';
 
 export const InviteUser = () => {
   const productName = configuration.productName;
   const inviteLink = `{{ .SiteURL }}/auth/confirm?token_hash={{ .TokenHash }}&type=invite&callback={{ .RedirectTo }}`;
   const previewText = `You have bee invited to join - ${productName}`;
+  const style = getBodyStyle();
 
   return (
     <Html>
       <Head>
-        <BodyStyle />
+        <Meta />
       </Head>
 
       <Preview>{previewText}</Preview>
 
       <Tailwind>
-        <Body>
+        <Body style={style}>
           <EmailWrapper>
             <EmailHeader>
-              <EmailHeading>You have been invited to {productName}</EmailHeading>
+              <EmailHeading>
+                You have been invited to {productName}
+              </EmailHeading>
             </EmailHeader>
 
             <EmailContent>
@@ -49,13 +52,6 @@ export const InviteUser = () => {
                   Accept invite to {productName}
                 </CtaButton>
               </Section>
-
-              <Text className="text-[#242424] text-[16px] leading-[20px]">
-                or copy and paste this URL into your browser:{' '}
-                <Link href={inviteLink} className="text-blue-600 no-underline">
-                  {inviteLink}
-                </Link>
-              </Text>
             </EmailContent>
 
             <EmailFooter>{productName}</EmailFooter>

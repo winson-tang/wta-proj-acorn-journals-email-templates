@@ -1,12 +1,12 @@
-import { Container, Text } from '@react-email/components';
+import { Section, Text } from '@react-email/components';
 import * as React from 'react';
 
 export function EmailFooter(props: React.PropsWithChildren) {
   return (
-    <Container>
+    <Section>
       <Text className="text-[12px] leading-[20px] text-gray-300 px-4">
         {props.children}
       </Text>
-    </Container>
+    </Section>
   );
 }

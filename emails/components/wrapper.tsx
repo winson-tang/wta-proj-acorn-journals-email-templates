@@ -18,7 +18,7 @@ export function EmailWrapper(
     >
       <Container
         style={{
-          maxWidth: '720px',
+          maxWidth: '480px',
           backgroundColor: '#fafafa',
           margin: 'auto',
         }}

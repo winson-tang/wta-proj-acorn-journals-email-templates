@@ -2,7 +2,6 @@ import {
   Body,
   Head,
   Html,
-  Link,
   Preview,
   Section,
   Text,
@@ -15,24 +14,26 @@ import { EmailWrapper } from './components/wrapper';
 import { CtaButton } from './components/cta-button';
 import { EmailFooter } from './components/footer';
 import { EmailHeading } from './components/heading';
-import { BodyStyle } from './components/body-style';
 import { EmailContent } from './components/content';
 import { EmailHeader } from './components/header';
+import { Meta } from './components/meta';
+import { getBodyStyle } from './lib/get-body-style';
 
 export const ChangeEmailAddress = () => {
   const productName = configuration.productName;
   const previewText = `Confirm Change of Email | ${productName}`;
+  const style = getBodyStyle();
 
   return (
     <Html>
       <Head>
-        <BodyStyle />
+        <Meta />
       </Head>
 
       <Preview>{previewText}</Preview>
 
       <Tailwind>
-        <Body>
+        <Body style={style}>
           <EmailWrapper>
             <EmailHeader>
               <EmailHeading>Confirm Change of Email</EmailHeading>
@@ -49,16 +50,6 @@ export const ChangeEmailAddress = () => {
                   Confirm Email Change
                 </CtaButton>
               </Section>
-
-              <Text className="text-[#242424] text-[16px] leading-[20px]">
-                or copy and paste this URL into your browser:{' '}
-                <Link
-                  href={`{{ .ConfirmationURL }}`}
-                  className="text-blue-600 no-underline"
-                >
-                  {`{{ .ConfirmationURL }}`}
-                </Link>
-              </Text>
             </EmailContent>
 
             <EmailFooter>{productName}</EmailFooter>
