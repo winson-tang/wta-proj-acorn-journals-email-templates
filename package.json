@@ -10,14 +10,15 @@
     "format:fix": "prettier ./emails --write"
   },
   "dependencies": {
+    "@react-email/components": "0.3.2",
     "@types/dotenv": "8.2.0",
-    "@react-email/components": "0.0.42",
-    "react-email": "4.0.16",
+    "dotenv": "^16.4.5",
     "react": "^19.0.0",
-    "zod": "^3.24.2",
-    "dotenv": "^16.4.5"
+    "react-email": "4.2.5",
+    "zod": "^3.24.2"
   },
   "devDependencies": {
+    "@react-email/preview-server": "^4.2.5",
     "@types/react": "19.0.8",
     "@types/react-dom": "19.0.3",
     "prettier": "^3.5.1"
