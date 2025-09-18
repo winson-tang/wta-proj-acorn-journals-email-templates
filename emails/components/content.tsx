@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { Container, Section } from '@react-email/components';
+import { Section } from '@react-email/components';
 import { Logo } from './logo';
 import { configuration } from '../../config';
 
@@ -13,10 +13,8 @@ export function EmailContent({
   displayLogo?: boolean;
 }>) {
   return (
-    <Container
-      className={
-        'mx-auto rounded-xl bg-white px-[48px] py-[36px] ' + className || ''
-      }
+    <Section
+      className={'rounded-xl bg-white px-[48px] py-[36px] ' + className || ''}
     >
       {displayLogo && (
         <Section className={'mb-4'}>
@@ -25,6 +23,6 @@ export function EmailContent({
       )}
 
       {children}
-    </Container>
+    </Section>
   );
 }
